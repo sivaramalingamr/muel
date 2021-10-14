@@ -1,0 +1,66 @@
+.wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    margin: 2vw auto 0;
+    position: relative;
+    overflow: hidden;
+    flex-wrap: wrap;
+    .container {
+        .showIcon{
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        margin: 0 auto;
+        height: 55vh;
+        display: inline-block;
+        &.left,
+        &.right {
+            width: 18vw;
+        }
+        &.left{
+            margin-left: 1vw;
+        }
+        &.right{
+            margin-right: 1vw;
+        }
+        &.center {
+            min-width: 58vw;
+            margin: 0 1vw;
+            flex: 1 0 0;
+        }
+        &.bottom {
+            height: 30vh;
+            width: 98vw;
+            margin: 0 1vw;
+        }
+        &.showElement{
+            // position: absolute;
+            &.right{    
+                width:5vw;
+            }
+            &.left{
+                width:5vw;
+            }
+            &.bottom{
+               display: none;
+            }
+        }
+    }
+    .row-container {
+        margin: 10px 0;
+        flex-basis: 100%;
+        width: 0;
+    }
+}
+
+::ng-deep {
+    app-container-card {
+        height: inherit;
+        
+    }
+}
