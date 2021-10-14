@@ -1,0 +1,45 @@
+
+
+<div id="div2" (drop)="drop($event)" (dragover)="allowDrop($event)"></div>
+<div class="wrapper">
+    <div #slideElement class="container left" id="leftElem">
+        <a class="showIcon" (click)="showOrHide($event, 'leftElem')">Collapse</a>
+        <app-container-card>
+            <div class="show-element">
+                <p>Left element</p>
+            </div>
+        </app-container-card>
+    </div>
+    <div class="container center">
+        <a class="showIcon" (click)="showOrHide($event)">Collapse</a>
+        <app-container-card>
+            <div class="show-element">
+                <p>Center element</p>
+            </div>
+        </app-container-card>
+    </div>
+    <div #slideElement id="rightElem" class="container right">
+        <a class="showIcon" (click)="showOrHide($event, 'rightElem')">Collapse</a>
+        <app-container-card>
+            <div class="show-element">
+                <ng-container *ngFor="let element of rightElement">
+                    <div class="element-container">
+                        {{ element.value}}
+                    </div>
+                </ng-container>
+            </div>
+        </app-container-card>
+    </div>
+    <div class="row-container">
+        &nbsp;
+    </div>
+
+    <div #slideElement id="bottomElem" class="container bottom">
+        <a class="showIcon" (click)="showOrHide($event, 'bottomElem')">Collapse</a>
+        <app-container-card>
+            <div class="show-element">
+                <p>Bottom element</p>
+            </div>
+        </app-container-card>
+    </div>
+</div>
