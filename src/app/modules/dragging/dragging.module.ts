@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { DraggingRoutingModule } from './dragging-routing.module';
 import { ContainerCardComponent } from './components/container-card/container-card.component';
-
+import { NgDragDropModule } from 'ng-drag-drop';
 
 @NgModule({
   declarations: [ContainerCardComponent],
   imports: [
     CommonModule,
-    DraggingRoutingModule
+    DraggingRoutingModule,
+    NgDragDropModule.forRoot()
   ],
   exports:[ContainerCardComponent]
 })

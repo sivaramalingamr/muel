@@ -6,6 +6,7 @@ import { DragDropComponent } from './components/drag-drop/drag-drop.component';
 import { DropElementComponent } from './components/drop-element/drop-element.component';
 import { MatCardComponent } from './components/mat-card/mat-card.component';
 import { DraggingModule } from '../dragging/dragging.module';
+import { NgDragDropModule } from 'ng-drag-drop';
 
 @NgModule({
   declarations: [    
@@ -16,7 +17,8 @@ import { DraggingModule } from '../dragging/dragging.module';
   imports: [
     CommonModule,
     MuelRoutingModule,
-    DraggingModule
+    DraggingModule,    
+    NgDragDropModule.forRoot()
   ]
 })
 export class MuelModule { }

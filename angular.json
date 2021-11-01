@@ -20,6 +20,9 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "allowedCommonJsDependencies": [
+              "ng-drag-drop"
+           ],
             "outputPath": "dist/muel-app",
             "index": "src/index.html",
             "main": "src/main.ts",
