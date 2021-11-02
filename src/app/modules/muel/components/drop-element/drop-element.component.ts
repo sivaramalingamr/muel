@@ -16,6 +16,7 @@ export class DropElementComponent implements OnInit, AfterViewInit {
     { key: "Label5", value: "Label5", required: true },
   ]
   droppedItems: any = [];
+  showingProperty: any;
   items = [
     { name: "Apple", type: "fruit" },
     { name: "Carrot", type: "vegetable" },
@@ -36,6 +37,11 @@ export class DropElementComponent implements OnInit, AfterViewInit {
     this.droppedItems.push(e.dragData);
     // e.target.appendChild(e.dragData);
   }
+
+  getProperties(itemName:any){
+    this.showingProperty = itemName;
+  }
+
   allowDrop(ev: any) {
     ev.preventDefault();
   }
@@ -54,6 +60,7 @@ export class DropElementComponent implements OnInit, AfterViewInit {
       }
     })
   }
+
   drop(ev: any) {
     ev.preventDefault();
     let data: any = ev.dataTransfer.getData("text");

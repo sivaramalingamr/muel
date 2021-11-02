@@ -6,24 +6,29 @@
         <a class="showIcon" (click)="showOrHide($event, 'leftElem')">Collapse</a>
         <app-container-card>
             <div class="show-element">
-                <p>Left element</p>
+                <p>List menu</p>
             </div>
         </app-container-card>
     </div>
     <div class="container center">
-
         <a class="showIcon">&nbsp;</a>
         <app-container-card>
             <div class="show-element">
-                <p>Dropping Elements</p>
+                <p>Draw Components</p>
             </div>
             <div class="col-sm-12">
                 <div class="panel panel-default" droppable
                     (onDrop)="onItemDrop($event)">
-                    <div class="panel-heading">Drop Items here</div>
+                    <div class="panel-heading"></div>
                     <div class="panel-body">
-                        <li *ngFor="let item of droppedItems"
-                            class="list-group-item">{{item.name}}</li>
+                        <div class="list-group-item">
+                            <a class="anchor-link">Start</a>
+                        </div>
+                        <div *ngFor="let item of droppedItems"
+                            class="list-group-item"
+                            (click)="getProperties(item.name)"
+                            [class.add-connection]="droppedItems.length>0"><a
+                                class="anchor-link">{{item.name}}</a></div>
                     </div>
                 </div>
             </div>
@@ -33,12 +38,7 @@
         <a class="showIcon" (click)="showOrHide($event, 'rightElem')">Collapse</a>
         <app-container-card>
             <div class="show-element">
-                <!-- <ng-container *ngFor="let element of rightElement">
-                    <div class="element-container">
-                        {{ element.value}}
-                    </div>
-                </ng-container> -->
-                <h3>Transfer Data via Drag Drop</h3>
+                <h3>Available Components</h3>
                 <div class="row">
                     <div class="col-sm-3">
                         <ul class="list-group">
@@ -58,7 +58,8 @@
         <a class="showIcon" (click)="showOrHide($event, 'bottomElem')">Collapse</a>
         <app-container-card>
             <div class="show-element">
-                <p>Bottom element</p>
+                <h1>Properties list</h1>
+                {{showingProperty}}
             </div>
         </app-container-card>
     </div>
